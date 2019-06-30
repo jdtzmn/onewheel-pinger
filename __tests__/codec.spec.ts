@@ -1,6 +1,11 @@
 import { randomBytes } from 'crypto'
 import { encrypt, decrypt, hash } from '../src/codec'
 
+// Set the encryptionKey
+jest.mock('../src/env', () => ({
+  encryptionKey: randomBytes(32)
+}))
+
 describe('codec', () => {
   it('should encrypt a buffer with a random iv every time', () => {
     const buffer = Buffer.from('constant string', 'utf8')
