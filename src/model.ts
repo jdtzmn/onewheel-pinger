@@ -57,12 +57,12 @@ ${setupMessage}`
       return this.checkDeliveryDate(user)
     } else if (message.toUpperCase() === 'RESET') {
       return this.setupInfo(user)
-    } else if (message.toUpperCase() === 'HELP') {
+    } else if (message.toUpperCase() === '?') {
       return 'You can text me `CHECK` to see the delivery date, `RESET` to change your order number or email, and `STOP` to stop receiving texts from me.'
     }
 
     // Otherwise, send a help message
-    return "Hello! I'm a Onewheel pinger bot to check on the delivery date so you don't have to. Type `HELP` to see a list of my commands."
+    return "Hello! I'm a Onewheel pinger bot to check on the delivery date so you don't have to. Type `?` to see a list of my commands."
   }
 
   private async handleOrderNumber (user: UserObject, orderNumber: string) {

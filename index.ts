@@ -27,8 +27,14 @@ app.post('/', validationMiddleware, async (req, res) => {
     }
   } = req
 
-  const response = await model.handle(phoneNumber, message)
-  res.send(response)
+  const trimmedMessage = (message as string).trim()
+  const response = await model.handle(phoneNumber, trimmedMessage)
+
+  const twiml = new twilio.twiml.MessagingResponse()
+  twiml.message(response)
+
+  res.writeHead(200, { 'Content-Type': 'text/xml' })
+  res.end(twiml.toString())
 })
 
 // Create mongo connection
