@@ -394,7 +394,7 @@
     "@types/node" "*"
     "@types/range-parser" "*"
 
-"@types/express@*", "@types/express@^4.16.1", "@types/express@^4.17.0":
+"@types/express@^4.16.1", "@types/express@^4.17.0":
   version "4.17.0"
   resolved "https://registry.yarnpkg.com/@types/express/-/express-4.17.0.tgz#49eaedb209582a86f12ed9b725160f12d04ef287"
   integrity sha512-CjaMu57cjgjuZbh9DpkloeGxV45CnMGlVd+XpG7Gm9QgVrd7KFq+X4HY0vM+2v0bczS48Wg7bvnMY5TN+Xmcfw==
@@ -458,11 +458,6 @@
   resolved "https://registry.yarnpkg.com/@types/normalize-package-data/-/normalize-package-data-2.4.0.tgz#e486d0d97396d79beedd0a6e33f4534ff6b4973e"
   integrity sha512-f5j5b/Gf71L+dbqxIpQ4Z2WlmI/mPJ0fOkGGmFgtb6sAu97EPczzbS3/tJKxmcYDj55OX6ssqwDAWOHIYDRDGA==
 
-"@types/q@^0":
-  version "0.0.37"
-  resolved "https://registry.yarnpkg.com/@types/q/-/q-0.0.37.tgz#7d6a934b35ee2f0ed0646d286eba559599021c9e"
-  integrity sha512-vjFGX1zMTMz/kUp3xgfJcxMVLkMWVMrdlyc0RwVyve1y9jxwqNaT8wTcv6M51ylq2a/zn5lm8g7qPSoIS4uvZQ==
-
 "@types/range-parser@*":
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/@types/range-parser/-/range-parser-1.2.3.tgz#7ee330ba7caafb98090bece86a5ee44115904c2c"
@@ -480,15 +475,6 @@
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@types/stack-utils/-/stack-utils-1.0.1.tgz#0a851d3bd96498fa25c33ab7278ed3bd65f06c3e"
   integrity sha512-l42BggppR6zLmpfU6fq9HEa2oGPEI8yrSPL3GITjfRInppYFahObbIQOQK3UGxEnyQpltZLaPe75046NOZQikw==
-
-"@types/twilio@^0.0.10":
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/@types/twilio/-/twilio-0.0.10.tgz#2ed27023ff7463642f90aa7ff103945581bc8e4b"
-  integrity sha512-VtF3CV+ur3SHoKV12s9zTywd2PhX1U+Q+xSKvQaIfH5mLYU9iqfsiPwDtqJ5L9Slu3gJ8AcC/kT3UuqCOYYvIg==
-  dependencies:
-    "@types/express" "*"
-    "@types/node" "*"
-    "@types/q" "^0"
 
 "@types/yargs@^12.0.2", "@types/yargs@^12.0.9":
   version "12.0.12"

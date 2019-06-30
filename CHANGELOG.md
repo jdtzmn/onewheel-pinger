@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Server so that it responds with the reply instead of sending messages separately
+
+- Removed @types/twilio since it is deprecated
+
+- Now uses TwiML to respond to texts
+
+- `HELP` command to `?`
+
+### Fixed
+
+- A bug where messages with excess spaces would not be sent the right responses
+
 ## [0.1.1] - 2019-6-30
 
 ### Changed
