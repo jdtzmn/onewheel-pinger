@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.2] - 2019-6-30
+
 ### Changed
 
 - Server so that it responds with the reply instead of sending messages separately
