@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Removed `s from message commands
+
 ## [0.1.3] - 2019-6-30
 
 ### Added
