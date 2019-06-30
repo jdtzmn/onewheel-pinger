@@ -88,7 +88,9 @@ ${setupMessage}`
 
 I'll check daily, and keep you posted as to whether the date changes do that you don't have to.
 
-If at any point you want to stop receiving messages, just text me STOP and I won't message you again.`
+To see a list of commands which are available, text me \`?\`.
+
+If at any point you want to stop receiving messages, just text me \`STOP\` and I won't message you again.`
     } catch (err) {
       return err.message
     }
