@@ -27,8 +27,8 @@ app.post('/', validationMiddleware, async (req, res) => {
     }
   } = req
 
-  await model.handle(phoneNumber, message)
-  res.sendStatus(200)
+  const response = await model.handle(phoneNumber, message)
+  res.send(response)
 })
 
 // Create mongo connection
