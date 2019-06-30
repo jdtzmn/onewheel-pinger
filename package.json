@@ -1,7 +1,22 @@
 {
   "name": "onewheel-pinger",
   "scripts": {
-    "start": "ts-node index.ts"
+    "start": "ts-node index.ts",
+    "test": "jest --watch",
+    "ci": "jest --ci",
+    "lint": "eslint --ext .ts,.js ."
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint --fix",
+      "git add",
+      "jest --findRelatedTests"
+    ]
   },
   "version": "0.0.1",
   "description": "an app to ping the onewheel page to see if the delivery date has updated",
@@ -17,7 +32,6 @@
     "debug": "^4.1.1",
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
-    "gators": "^1.1.3",
     "mongodb": "^3.2.7",
     "ts-node": "^8.3.0",
     "twilio": "^3.33.0"
@@ -26,9 +40,24 @@
     "@types/axios": "^0.14.0",
     "@types/body-parser": "^1.17.0",
     "@types/cron": "^1.7.1",
+    "@types/dotenv": "^6.1.1",
     "@types/express": "^4.17.0",
+    "@types/jest": "^24.0.15",
     "@types/node": "^12.0.10",
     "@types/twilio": "^0.0.10",
+    "@typescript-eslint/eslint-plugin": "^1.11.0",
+    "@typescript-eslint/parser": "^1.11.0",
+    "eslint": "^6.0.1",
+    "eslint-config-standard-with-typescript": "^7.1.0",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-jest": "^22.7.1",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "husky": "^2.7.0",
+    "jest": "^24.8.0",
+    "lint-staged": "^8.2.1",
+    "ts-jest": "^24.0.2",
     "typescript": "^3.5.2"
   }
 }
