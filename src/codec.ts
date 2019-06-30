@@ -1,7 +1,8 @@
 import crypto from 'crypto'
+import env from './env'
+
 const hashAlgorithm = 'sha256'
 const encryptionAlgorithm = 'aes-256-cbc'
-import env from './env'
 const { encryptionKey: key } = env
 
 export function hash (buffer: Buffer): Buffer {

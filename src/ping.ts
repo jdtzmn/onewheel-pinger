@@ -20,9 +20,9 @@ async function ping (order: number, email: string) {
     order_number: order,
     email
   }))
-  
+
   const { data } = response
-  
+
   if (data.status === 'error') throw new Error(data.error_message)
 
   const date = new Date(data.ship_date)

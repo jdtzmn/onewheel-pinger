@@ -4,8 +4,8 @@ import { hash, encrypt, decrypt } from './codec'
 
 export enum UserStatus {
   default,
-  sending_order_number,
-  sending_email_address
+  sendingOrderNumber,
+  sendingEmailAddress
 }
 
 export interface UserObject {
@@ -20,7 +20,7 @@ export default class DB {
   private static client: MongoClient
   private static db: Db
 
-  static get isConnected () {
+  public static get isConnected () {
     return this.db !== undefined
   }
 
@@ -58,7 +58,7 @@ export default class DB {
 
   public static async addNumber (phoneNumber: string) {
     const collection = this.db.collection('user')
-    
+
     await collection.insertOne({
       _id: this.hashNumber(phoneNumber),
       data: this.createEncryptedUserBuffer(phoneNumber)
@@ -74,7 +74,7 @@ export default class DB {
     const { buffer } = data
     const objString = decrypt(buffer).toString('utf8')
     const userObject: UserObject = JSON.parse(objString)
-    
+
     return userObject
   }
 
@@ -83,9 +83,9 @@ export default class DB {
 
     const _id = this.hashNumber(phoneNumber)
     const document = await collection.findOne({ _id })
-  
+
     if (document === null) return undefined
-  
+
     const { data } = document
     return this.getUserObjectFrom(data)
   }

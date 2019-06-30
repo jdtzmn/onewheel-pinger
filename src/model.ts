@@ -26,14 +26,14 @@ export default class Model {
   private async setupUser (phoneNumber: string) {
     const user = await this.db.addNumber(phoneNumber)
     await sendMessage(user.number, "Hey! I'm a Onewheel pinger bot to check on the delivery date so you don't have to. I'm going to quickly help you get set up.")
-    await sendMessage(user.number, "Just so you know, all of your data is stored encrypted using AES-256 encryption before it is stored.")
+    await sendMessage(user.number, 'Just so you know, all of your data is stored encrypted using AES-256 encryption before it is stored.')
     return this.setupInfo(user)
   }
 
   private async setupInfo (user: UserObject) {
     const { number } = user
     await sendMessage(number, 'Please first send us your order number, and then send us your email address for shipping.')
-    return this.db.setStatus(number, UserStatus.sending_order_number)
+    return this.db.setStatus(number, UserStatus.sendingOrderNumber)
   }
 
   private async handleCommand (user: UserObject, message: string) {
@@ -43,11 +43,11 @@ export default class Model {
       await this.db.removeNumber(user.number)
       return sendMessage(number, "Ok. I won't send you anymore messages unless you text me again.")
     }
-    
+
     // First, check if the user is in a different state
-    if (user.status === UserStatus.sending_order_number) {
+    if (user.status === UserStatus.sendingOrderNumber) {
       return this.handleOrderNumber(user, message)
-    } else if (user.status === UserStatus.sending_email_address) {
+    } else if (user.status === UserStatus.sendingEmailAddress) {
       return this.handleEmailAddress(user, message)
     }
 
@@ -57,7 +57,7 @@ export default class Model {
     } else if (message.toUpperCase() === 'RESET') {
       return this.setupInfo(user)
     } else if (message.toUpperCase() === 'HELP') {
-      return sendMessage(number, "You can text me `CHECK` to see the delivery date, `RESET` to change your order number or email, and `STOP` to stop receiving texts from me.")
+      return sendMessage(number, 'You can text me `CHECK` to see the delivery date, `RESET` to change your order number or email, and `STOP` to stop receiving texts from me.')
     }
 
     // Otherwise, send a help message
@@ -71,8 +71,8 @@ export default class Model {
       return sendMessage(number, "That doesn't seem right... please try to send your order number again.")
     } else {
       await this.db.setOrder(number, order)
-      await this.db.setStatus(number, UserStatus.sending_email_address)
-      return sendMessage(number, "Looks good! Now what is the email address you used to order the Onewheel?")
+      await this.db.setStatus(number, UserStatus.sendingEmailAddress)
+      return sendMessage(number, 'Looks good! Now what is the email address you used to order the Onewheel?')
     }
   }
 

@@ -41,6 +41,8 @@ Once the dependencies are installed, environment variables need to be set:
 
 This project uses twilio to send and receive texts as well as mongo to store user data.
 
+For utility, one can use a `.env` file to store all of these environment variables locally. Learn more [here](https://www.npmjs.com/package/dotenv).
+
 ---
 
 To find the twilio sid and auth_token, [read their docs here](https://support.twilio.com/hc/en-us/articles/223136027-Auth-Tokens-and-How-to-Change-Them).

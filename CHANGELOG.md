@@ -11,6 +11,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - A README.md
 - License file
+- eslint for linting typescript files
+- npm script for linting
+- vscode settings to enable eslint on typescript files
+
+### Fixed
+
+- Code that did not match coding style
 
 ### Changed
 
