@@ -34,7 +34,8 @@
     "express": "^4.17.1",
     "mongodb": "^3.2.7",
     "ts-node": "^8.3.0",
-    "twilio": "^3.33.0"
+    "twilio": "^3.33.0",
+    "typescript": "^3.5.2"
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
@@ -57,7 +58,6 @@
     "husky": "^2.7.0",
     "jest": "^24.8.0",
     "lint-staged": "^8.2.1",
-    "ts-jest": "^24.0.2",
-    "typescript": "^3.5.2"
+    "ts-jest": "^24.0.2"
   }
 }
