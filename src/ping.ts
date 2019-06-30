@@ -16,11 +16,13 @@ function formatDate (date: Date) {
 
 async function ping (order: number, email: string) {
   debug(`Pinging order: ${order}, email: ${email}`)
-  const response = await instance.post('/', qs.stringify({
+
+  const body = qs.stringify({
     order_number: order,
     email
-  }))
+  })
 
+  const response = await instance.post('/', body)
   const { data } = response
 
   if (data.status === 'error') throw new Error(data.error_message)

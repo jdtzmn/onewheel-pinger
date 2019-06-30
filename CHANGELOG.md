@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - eslint for linting typescript files
 - npm script for linting
 - vscode settings to enable eslint on typescript files
+- Basic unit tests using jest
 
 ### Fixed
 
