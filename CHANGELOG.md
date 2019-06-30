@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- A README.md
+- License file
+
+### Changed
+
+- env.ts file to add default values
+
+### Removed
+
+- Unnecessary dependency
+
 ## [0.0.1] - 2019-06-30
 
 ### Added
