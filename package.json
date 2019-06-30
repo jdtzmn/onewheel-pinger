@@ -1,5 +1,6 @@
 {
   "name": "onewheel-pinger",
+  "version": "0.1.1",
   "scripts": {
     "start": "ts-node index.ts",
     "test": "jest --watch",
@@ -18,7 +19,6 @@
       "jest --findRelatedTests"
     ]
   },
-  "version": "0.1.0",
   "description": "an app to ping the onewheel page to see if the delivery date has updated",
   "repository": "https://github.com/jdtzmn/onewheel-pinger",
   "author": "jdtzmn <jdtzmn@gmail.com>",
