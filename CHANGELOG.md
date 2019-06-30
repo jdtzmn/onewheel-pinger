@@ -11,10 +11,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Server so that it responds with the reply instead of sending messages separately
 
-### Removed
-
-- sendMessage function since it was no longer needed
-
 ## [0.1.1] - 2019-6-30
 
 ### Changed
