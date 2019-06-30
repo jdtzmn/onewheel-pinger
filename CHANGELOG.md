@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Moved typescript to a dependency instead of a devDependency
+- Moved some devDependencies to their correct place
 
 ## [0.1.0] - 2019-06-30
 
