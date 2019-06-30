@@ -15,6 +15,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - npm script for linting
 - vscode settings to enable eslint on typescript files
 - Basic unit tests using jest
+- Travis integration
+- Husky and lint-staged for precommit testing
 
 ### Fixed
 

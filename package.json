@@ -6,6 +6,18 @@
     "ci": "jest --ci",
     "lint": "eslint --ext .ts,.js ."
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint --fix",
+      "git add",
+      "jest --findRelatedTests"
+    ]
+  },
   "version": "0.0.1",
   "description": "an app to ping the onewheel page to see if the delivery date has updated",
   "repository": "https://github.com/jdtzmn/onewheel-pinger",
