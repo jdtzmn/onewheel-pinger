@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Dockerfile as well as .dockerignore
+
+### Removed
+
+- Unnecessary `@types/axios` package
+
 ## [0.1.6] - 2019-07-14
 
 ### Added
