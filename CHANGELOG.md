@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Debug namespace for the `checkDeliveryDates.ts` file
+- pm2 for monitoring and scaling
 
 ### Changed
 
