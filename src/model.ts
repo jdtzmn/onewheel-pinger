@@ -42,7 +42,7 @@ ${setupMessage}`
     // Prioritize people who don't want to messaged anymore
     if (message.toUpperCase() === 'STOP') {
       await this.db.removeNumber(user.number)
-      return "Ok. I won't send you anymore messages unless you text me again."
+      return
     }
 
     // First, check if the user is in a different state
@@ -82,18 +82,14 @@ ${setupMessage}`
     await this.db.setEmail(number, email)
     await this.db.setStatus(number, UserStatus.default)
     const changedObject = await this.db.get(number)
-    try {
-      const deliveryStatus = await this.checkDeliveryDate(changedObject)
-      return `${deliveryStatus}
+    const deliveryStatus = await this.checkDeliveryDate(changedObject)
+    return `${deliveryStatus}
 
 I'll check daily, and keep you posted as to whether the date changes do that you don't have to.
 
 To see a list of commands which are available, text me ?.
 
 If at any point you want to stop receiving messages, just text me STOP and I won't message you again.`
-    } catch (err) {
-      return err.message
-    }
   }
 
   private async checkDeliveryDate (user: UserObject) {
@@ -110,11 +106,11 @@ If at any point you want to stop receiving messages, just text me STOP and I won
       debug(error)
 
       const message = await this.handleError(user)
-      throw new Error(message)
+      return message
     }
   }
 
-  private async handleError (user: UserObject) {
+  public async handleError (user: UserObject) {
     const { number } = user
     await this.db.removeNumber(number)
     await this.db.addNumber(number)
