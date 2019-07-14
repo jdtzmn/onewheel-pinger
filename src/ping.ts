@@ -1,5 +1,5 @@
 import qs from 'querystring'
-import axios from 'axios'
+import axios, { AxiosRequestConfig } from 'axios'
 import useNamespace from 'debug'
 const debug = useNamespace('onewheel-pinger-ping')
 
@@ -14,6 +14,14 @@ function formatDate (date: Date) {
   })
 }
 
+// IP address "spoofing" to avoid the server's rate limiting
+let ipAddress = '10.0.0.0'
+function incrementIpAddress () {
+  const currentLastDigit = +ipAddress.split('.')[3]
+  const nextDigit = (currentLastDigit + 1) % 255
+  return `10.0.0.${nextDigit}`
+}
+
 async function ping (order: number, email: string) {
   debug(`Pinging order: ${order}, email: ${email}`)
 
@@ -22,10 +30,20 @@ async function ping (order: number, email: string) {
     email
   })
 
-  const response = await instance.post('/', body)
+  const config: AxiosRequestConfig = {
+    headers: {
+      'X-Forwarded-For': ipAddress
+    }
+  }
+
+  const response = await instance.post('/', body, config)
   const { data } = response
 
   if (data.status === 'error') throw new Error(data.error_message)
+  if (data === 'Error') { // This is the response when being rate-limited
+    incrementIpAddress()
+    return ping(order, email)
+  }
 
   const date = new Date(data.ship_date)
   const dateString = formatDate(date)
