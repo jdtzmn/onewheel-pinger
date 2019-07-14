@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Dockerfile command from `yarn start` to instead use pm2
+
 ## [0.1.7] - 2019-07-14
 
 ### Added
