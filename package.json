@@ -1,6 +1,6 @@
 {
   "name": "onewheel-pinger",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "scripts": {
     "start": "pm2 start ecosystem.config.js --env production --no-daemon",
     "dev": "pm2 start ecosystem.config.js",
