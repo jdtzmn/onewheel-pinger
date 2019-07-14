@@ -7,19 +7,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.1.4] - 2019-6-30
+## [0.1.5] - 2019-07-13
+
+### Fixed
+
+- A bug where `Invalid Date` would be returned by the ping function if the Onewheel server was rate-limiting requests
+- An issue with npm package type definitions not being read correctly
+
+## [0.1.4] - 2019-06-30
 
 ### Changed
 
 - Removed `s from message commands
 
-## [0.1.3] - 2019-6-30
+## [0.1.3] - 2019-06-30
 
 ### Added
 
 - Note in welcome message about the help command
 
-## [0.1.2] - 2019-6-30
+## [0.1.2] - 2019-06-30
 
 ### Changed
 
@@ -35,7 +42,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - A bug where messages with excess spaces would not be sent the right responses
 
-## [0.1.1] - 2019-6-30
+## [0.1.1] - 2019-06-30
 
 ### Changed
 
