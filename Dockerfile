@@ -1,7 +1,5 @@
 FROM node:12.6.0-alpine
 
-USER node
-
 ENV PM2_HOME=/home/node/app/.pm2
 
 RUN \
@@ -18,5 +16,7 @@ RUN \
   pm2 install typescript && \
   chmod -R 755 /home/node/.pm2 && \
   chown -R node:node /home/node/.pm2
+
+USER node
 
 CMD ["pm2-runtime", "start", "--env", "production", "ecosystem.config.js"]
