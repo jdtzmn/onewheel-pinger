@@ -1,13 +1,11 @@
 {
   "name": "onewheel-pinger",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "scripts": {
-    "start": "pm2 start ecosystem.config.js --env production --no-daemon",
-    "dev": "pm2 start ecosystem.config.js",
+    "start": "ts-node index.ts",
     "test": "jest --watch",
     "ci": "jest --ci",
-    "lint": "eslint --ext .ts,.js .",
-    "postinstall": "$(npm bin)/pm2 install typescript"
+    "lint": "eslint --ext .ts,.js ."
   },
   "husky": {
     "hooks": {
@@ -33,7 +31,6 @@
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "mongodb": "^3.2.7",
-    "pm2": "^3.5.1",
     "ts-node": "^8.3.0",
     "twilio": "^3.33.0",
     "typescript": "^3.5.2"
