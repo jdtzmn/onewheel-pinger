@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Debug namespace for the `checkDeliveryDates.ts` file
+
+### Changed
+
+- The way certain errors were handled in the model and delivery dates CRON
+
+### Removed
+
+- A response for the `STOP` command
+
 ## [0.1.5] - 2019-07-13
 
 ### Fixed

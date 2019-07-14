@@ -30,6 +30,8 @@ app.post('/', validationMiddleware, async (req, res) => {
   const trimmedMessage = (message as string).trim()
   const response = await model.handle(phoneNumber, trimmedMessage)
 
+  if (response === undefined) return // Don't send a message if the `STOP` command is received
+
   const twiml = new twilio.twiml.MessagingResponse()
   twiml.message(response)
 
