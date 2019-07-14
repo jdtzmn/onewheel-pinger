@@ -19,7 +19,9 @@ let ipAddress = '10.0.0.0'
 function incrementIpAddress () {
   const currentLastDigit = +ipAddress.split('.')[3]
   const nextDigit = (currentLastDigit + 1) % 255
-  return `10.0.0.${nextDigit}`
+  const nextIpAddress = `10.0.0.${nextDigit}`
+  ipAddress = nextIpAddress
+  return ipAddress
 }
 
 async function ping (order: number, email: string) {
